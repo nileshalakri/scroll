@@ -1,23 +1,29 @@
-import Card from './component/Card';
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
-import "./css/main.css"
+import axios from "axios";
+import { useEffect, useState } from "react";
+import Card from "./component/Card";
+import "./css/main.css";
 
 function App() {
-  return (
-    <BrowserRouter>
+  const [api, setApi] = useState([]);
+  const [currentPage, setcurrentPage] = useState(1);
 
-      <Routes>
-        <Route path="/" element={<Card />} />
+  useEffect(() => {
+    fetchMoreData();
+  }, []);
 
-      </Routes>
+  const fetchMoreData = () => {
+    setcurrentPage(currentPage + 1);
+    axios
+      .get("https://rickandmortyapi.com/api/character?page=" + currentPage)
 
-    </BrowserRouter>
+      .then((res) => {
+        console.log(res);
+        console.log(res.data.length);
 
-  );
+        setApi([...api, ...res.data.results]);
+      });
+  };
+  return <Card api={api} fetchMoreData={fetchMoreData} />;
 }
 
 export default App;

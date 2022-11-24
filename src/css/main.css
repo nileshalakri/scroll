@@ -1,157 +1,139 @@
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: rgba(255, 255, 255, 0.87);
+  background: rgb(32, 35, 41);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1140px;
+    margin: auto;
   }
 
+  .col-xl-6 {
+    width: 46.6666%;
+  }
+}
 
-  body {
-    color: rgba(255, 255, 255, 0.87);
-    background-color: #242424;
-    font-family: Arial, Helvetica, sans-serif;
+@media screen and (max-width: 575px) {
+  .container {
+    width: 100%;
+    padding: 0 12px;
   }
 
-  * {
-    box-sizing: border-box
-  }
+  .col-6 {
+    width: 100%;
 
-  @media screen and (min-width:1200px) {
-    .container {
-      width: 1140px;
-      padding: 0 12px;
-      margin: auto;
-    }
-
-    .col-xl-1 {
-      width: 8.3333%;
-    }
-
-    .col-xl-2 {
-      width: 16.6666%;
-    }
-
-    .col-xl-3 {
-      width: 25%;
-    }
-
-    .col-xl-4 {
-      width: 33.33333%;
-    }
-
-    .col-xl-5 {
-      width: 41.6666%;
-    }
-
-    .col-xl-6 {
-      width: 50%;
-    }
-
-    .col-xl-7 {
-      width: 58.3333%;
-    }
-
-    .col-xl-8 {
-      width: 66.6666%;
-    }
-
-    .col-xl-9 {
-      width: 75%;
-    }
-
-    .col-xl-10 {
-      width: 83.3333%;
-    }
-
-    .col-xl-11 {
-      width: 91.66666%;
-    }
-
-    .col-xl-1,
-    .col-xl-2,
-    .col-xl-3,
-    .col-xl-4,
-    .col-xl-5,
-    .col-xl-6,
-    .col-xl-7,
-    .col-xl-8,
-    .col-xl-9,
-    .col-xl-10,
-    .col-xl-11 {
-      padding: 0 12px;
-    }
-  }
-
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-
-
-  .text-start {
-    text-align: left;
-  }
-
-  .text-end {
-    text-align: right;
-  }
-
-  .text-capitalize {
-    text-transform: capitalize;
-  }
-
-  .img-fluid {
-    max-width: 100%;
-    height: auto;
-  }
-
-
-
-  .carddetails {
-    display: flex;
     flex-direction: column;
-    align-items: flex-start;
-
   }
+}
 
-  .alive {
-    color: green;
-  }
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
 
-  .dead {
-    color: red;
-  }
+.text-start {
+  text-align: left;
+}
 
-  .unknown {
-    color: gray;
-  }
+.text-end {
+  text-align: right;
+}
 
-  .card {
-    border: 2px solid rgba(255, 255, 255, 0.568);
+.text-capitalize {
+  text-transform: capitalize;
+}
 
-    margin: 1rem auto;
-    border-radius: 7px;
-    overflow: hidden;
-    display: flex;
-    /* justify-content: flex-start; */
-    /* align-items: center; */
-    box-shadow: 5px 5px 25px black;
-    animation: fadeInMove 1s ease;
-  }
+.img-fluid {
+  max-width: 100%;
+}
 
-  .card>img {
-    width: 150px;
-    min-height: 150px;
-    height: 100%;
-    object-fit: cover;
-    animation: fadeIn 1s ease-in-out;
-  }
+.carddetails {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
 
+.alive {
+  color: green;
+  font-size: initial;
+  padding: 5px;
+}
 
-  .carddetails p {
-    font-weight: bold;
-    font-size: 1.1rem;
+.dead {
+  color: red;
+  font-size: initial;
+  padding: 5px;
+}
 
-    padding: 10px;
-  }
+.unknown {
+  color: gray;
+  font-size: initial;
+  padding: 5px;
 
+}
+
+.card {
+  margin: 1rem auto;
+  border-radius: 7px;
+  overflow: hidden;
+  display: flex;
+  /* justify-content: flex-start; */
+  /* align-items: center; */
+  background: rgb(60, 62, 68);
+  box-shadow: 5px 5px 25px black;
+  object-fit: cover;
+
+  animation: fadeInMove 1s ease;
+}
+
+.card>img {
+  width: 200px;
+  /* min-height: 150px; */
+  height: 100%;
+  /* object-fit:cover; */
+  animation: fadeIn 1s ease-in-out;
+}
+
+.carddetails p {
+  font-weight: bold;
+  font-size: 1.1rem;
+
+  padding: 10px;
+}
+
+.cardname {
+  font-family: -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !important;
+  font-weight: 800 !important;
+  font-size: 1.5rem !important;
+}
+
+.lastlocation {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: gray !important;
+}
+
+.lastlocation span {
+  color: white !important;
+}
+
+.firstseen {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 10px;
+  font-weight: lighter;
+
+  color: gray !important;
+}
+
+.firstseen span {
+  color: white !important;
+}
